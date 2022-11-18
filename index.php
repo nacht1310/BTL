@@ -27,6 +27,7 @@ include "inc/slider.php";
  			</div> <!-- het row -->
  		</div> <!--  het container -->
  	</div>  <!-- het badichvu -->
+	
   	<div class="khoimenu wow fadeInUp">  
  		<div class="tieudekhoimenu text-xs-center">
  			<div class="container">

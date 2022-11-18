@@ -68,12 +68,12 @@
 			            <a class="nav-link" href="contact.php">Contact</a>
 			          </li>
 					  <li class="nav-item">
-			            <a href="../websitemvc/admin/login.php" class="nav-link">
+			            <a href="/admin/login.php" class="nav-link">
 							<i class="fa fa-user" aria-hidden="true">  Log in</i>
 						</a>
 			          </li>
 					  <li class="nav-item">
-			            <a href="../websitemvc/register.php" class="nav-link">
+			            <a href="/register.php" class="nav-link">
 							<i class="fa fa-user" aria-hidden="true">  Register</i>
 						</a>
 			          </li>
