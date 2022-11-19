@@ -15,7 +15,7 @@
 	  $conn->close();*/
 	if($_SERVER['REQUEST_METHOD'] =='POST'){
 		$adminuser = $_POST['adminuser'];
-		$adminpass = md5($_POST['adminpass']);
+		$adminpass = $_POST['adminpass'];
 		$login_check = $class->login_admin($adminuser, $adminpass);
 	}
 ?>

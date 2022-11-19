@@ -75,6 +75,10 @@
         $address = $_POST["address"];
         $username = $_POST["username"];
         $password = $_POST["password"];
+
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
+        $date = date("Y-m-d h:i:sa");
+        $id = uniqid();
         
         if (strlen($name)>0 && strlen($email)>0 && strlen($phone_number)>0 && strlen($address)>0 
             && strlen($username)>0 && strlen($password)>0 ) {
@@ -82,9 +86,8 @@
             if (!$conn) {
                 die("Kết nối thất bại: ".mysqli_connect_error());
             }
-            $sql = "INSERT INTO tbl_admin(the_name, the_email, 
-                the_username, the_password, the_phonenumber, the_address, the_permission)
-                VALUES ('$name','$email','$username','md5($password)','$phone_number','$address','2')";
+            $sql = "INSERT INTO tbl_user(`id`, `name`, `address`, `phone`, `email`,`username`, `password`, `date_create`)
+                VALUES ('$id', '$name', '$address','$phone_number','$email','$username','$password','$date')";
             
             if (mysqli_query($conn, $sql)) {
                 echo "<script>alert('Đăng ký thành công')</script>";

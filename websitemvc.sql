@@ -374,3 +374,21 @@ COMMIT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+
+CREATE TABLE `tbl_user` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `date_create` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_customer`
+--
+
+INSERT INTO `tbl_user` (`id`, `name`, `address`, `phone`, `email`,`username`, `password`, `date_create`) VALUES
+(5, 'Doan3', 'Tra Vinh1', '03531402471', 'ncongdoan24@hcmut.edu.vn','congdoan123', 'e10adc3949ba59abbe56e057f20f883e', '2022-11-19 05:09:11');

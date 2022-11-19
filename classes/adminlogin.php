@@ -15,7 +15,7 @@
             $this->db = new Database();
             $this->fm = new Format();
         }
-        public function login_admin($adminuser, $adminpass){
+        public function login_admin($adminuser, $adminpass) {
             $adminuser = $this->fm->validation($adminuser);
             $adminpass = $this->fm->validation($adminpass);
 
@@ -23,14 +23,14 @@
             $adminpass = mysqli_real_escape_string($this->db->link, $adminpass);
 
             if(empty($adminuser) || empty($adminpass)){
-                $alert = "user and pass must be not empty";
+                $alert = "User and pass must be not empty";
                 return $alert;
             }
             else{
                 $query = "SELECT * FROM tbl_admin WHERE  adminuser = '$adminuser' AND adminpass ='$adminpass' LIMIT 1";
                 $result = $this->db->select($query);
                 
-                if($result !=false){
+                if($result != false){
                     $value = $result->fetch_assoc();
                     Session::set('adminlogin',true);
                     Session::set('adminid', $value['adminid']);
@@ -39,7 +39,7 @@
                     header('Location:index.php');
                 }
                 else{
-                    $alert ="user and passs not match";
+                    $alert ="User and passs not match $adminuser $adminpass";
                     return $alert;
                 }
             }
