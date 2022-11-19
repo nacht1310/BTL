@@ -68,7 +68,7 @@
 			            <a class="nav-link" href="contact.php">Contact</a>
 			          </li>
 					  <li class="nav-item">
-			            <a href="/admin/login.php" class="nav-link">
+			            <a href="/loginchoose.php" class="nav-link">
 							<i class="fa fa-user" aria-hidden="true">  Log in</i>
 						</a>
 			          </li>

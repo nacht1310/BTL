@@ -945,3 +945,42 @@ a.nutslide.fontoswarld.btn.btn-warning {
 
 /*HET GIAO DIEN DI DONG */
 
+/* Choose Login Meothod Page */
+.background {
+    text-align: center;
+    width: 100%; 
+    height: 750px;
+    background-color: orange;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.background img {
+    width: 200px;
+}
+
+.section-login {
+    width: 50%; 
+    height: auto; 
+    padding: 20px; 
+    background-color: #dde2e2; 
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.section-login h1 {
+    margin-bottom: 20px;
+}
+
+.section-login .btn {
+    margin-bottom: 20px;
+    width: 200px;
+    color: white;
+    font-weight: 500;
+    background-color: #F49D1A;
+}
