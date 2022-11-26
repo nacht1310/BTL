@@ -2,12 +2,18 @@
     display: flex;
     flex-direction: column;
     width: 20%;
-    background-image: linear-gradient(#1fb395, #92c842);
-    color: white;
+    background-image: linear-gradient(#065E9D, #078EED);
 }
-.sidebar a {
-    font-weight: 900;
+.sidebar .submenu li {
+    font-weight: 500;
+    cursor: pointer;
 }
+
+.sidebar .submenu li:hover {
+    filter: invert(1);
+    color: #FACB0F;
+}
+
 .sidebar li {
     margin: 20px 0 20px 0;
 }
@@ -16,45 +22,46 @@ ul {
     list-style-type: none;
 }
 
-.menu li {
-    padding-left: 21px;
-}
-
 .menu {
     filter: invert(1);
+}
+
+.menu li {
+    padding-left: 21px;
 }
 
 .menu .option {
     background-image: url(../img/icon-option.png);
     background-repeat: no-repeat;
-    background-position: 0px 3px;
+    background-position: 0px 8px;
 }
 
 .menu .update {
     background-image: url(../img/icon-update.png);
     background-repeat: no-repeat;
-    background-position: 0px 3px;
+    background-position: 0px 8px;
 }
 
 .menu .slider {
     background-image: url(../img/icon-slider.png);
     background-repeat: no-repeat;
-    background-position: 0px 3px;
+    background-position: 0px 8px;
 }
 
 .menu .category {
     background-image: url(../img/icon-category.png);
     background-repeat: no-repeat;
-    background-position: 0px 3px;
+    background-position: 0px 8px;
 }
 
 .menu .product {
     background-image: url(../img/icon-product.png);
     background-repeat: no-repeat;
-    background-position: 0px 3px;
+    background-position: 0px 8px;
 }
 
 .menuitem {
+    font-weight: 900;
     font-size: 20px;
 }
 

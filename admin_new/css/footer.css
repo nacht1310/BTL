@@ -1,0 +1,13 @@
+.footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+}
+
+.footer a {
+    color: #27b391;
+}
+
+.footer a:hover {
+    font-weight: 900;
+}

@@ -13,25 +13,21 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Admin</title>
-    
+    <link rel="stylesheet" href="../../vendor/bootstrap.min.css">
     <link rel="stylesheet" href="./css/general.css">
     <link rel="stylesheet" href="./css/header.css">
     <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/footer.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
-    <script src="js/jquery-1.6.4.min.js" type="../node_modules/jquery/dist/jquery.js"></script>
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap.bundle.min.js"></script>
 
-    <script type="text/javascript" src="js/table/table.js"></script>
-    <script src="js/setup.js" type="text/javascript"></script>
-	 <script type="text/javascript">
-        $(document).ready(function () {
-            setupLeftMenu();
-		    setSidebarHeight();
-        });
-    </script>
+    <script type="text/javascript" src="js/click.js"></script>
 
 </head>
+
 <body>  
     <div class="header">
 
@@ -40,7 +36,7 @@
         </div>
 
        
-        <ul class="nav">
+        <ul class="nav-bar">
             <li><a href="index.php">Dashboard</a> </li>
             <li><a href="#">User Profile</a></li>
             <li><a href="changepassword.php">Change Password</a></li>
