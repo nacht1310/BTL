@@ -6,9 +6,11 @@ Navigation
 /* navigation (horizontal subnavigation)
 ----------------------------------------------- */
 ul.nav,
-ul.nav * { margin:0;padding:0;}
+ul.nav * { 
+	margin:0;padding:0;
+}
+
 ul.nav {
-  background: rgba(0, 0, 0, 0) url("../img/nav-repeat2.jpg") repeat-x scroll 0 8px !important;
   height: 58px;
   max-width: 100%;
   position: relative;
@@ -43,7 +45,7 @@ ul.nav li a {
 	text-decoration:none;
 	display:block;
 	float:left;
-	padding:0 1em;
+	padding:0 2em;
 	height:3.7em;
 	line-height:3.7em;
 	
@@ -167,15 +169,25 @@ ul.nav li.secondary:hover a:hover {
 }
 ul.nav li.secondary:hover a:active {background:#1F4562;}
 
-ul.nav li.ic-dashboard a span, .ic-dashboard{background:url(../img/icon-dashboard.png) no-repeat center left;}
-ul.nav li.ic-typography a span, .ic-typography{background:url(../img/icon-typography.png) no-repeat center left;}
-ul.nav li.ic-charts a span, .ic-charts{background:url(../img/icon-charts-graphs.png) no-repeat center left;}
-ul.nav li.ic-form-style a span, .ic-form-style{background:url(../img/icon-form-style.png) no-repeat center left;}
-ul.nav li.ic-grid-tables a span, .ic-grid-tables{background:url(../img/icon-grid-tables.png) no-repeat center left;}
-ul.nav li.ic-gallery a span, .ic-gallery{background:url(../img/icon-gallery.png) no-repeat center left;}
-ul.nav li.ic-notifications a span, .ic-notifications{background:url(../img/icon-notifications.png) no-repeat center left;}
+.ic-dashboard{
+	background:url(../img/icon-dashboard.png) no-repeat center left;
+}
+.ic-typography{
+	background:url(../img/icon-typography.png) no-repeat center left;
+}
+.ic-charts{
+	background:url(../img/icon-charts-graphs.png) no-repeat center left;
+}
+.ic-form-style{
+	background:url(../img/icon-form-style.png) no-repeat center left;
+}
+.ic-grid-tables{
+	background:url(../img/icon-grid-tables.png) no-repeat center left;
+}
+.ic-notifications{
+	background:url(../img/icon-notifications.png) no-repeat center left;
+}
 ul.nav li {
-  background-image: none !important;
   overflow: hidden;
 }
 
