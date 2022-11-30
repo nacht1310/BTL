@@ -1,0 +1,24 @@
+#news {
+    margin-top:50px;
+    height:100px;
+    
+}
+#news .row{
+    margin-left:0;
+}
+#news h2{
+    text-align: center;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color:rgb(109, 109, 77);
+}
+#news .newsContent{
+    background-image: url(/img/News/background.jpg);
+    
+}
+#news .card{
+    margin-left:5px;
+    margin-right: 5px;
+    margin-top: 15px;
+}
