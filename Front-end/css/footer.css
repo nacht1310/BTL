@@ -1,7 +1,30 @@
-.footer{
-    background-color: yellow;
-    min-height: 500px;
+footer{
     
+    height:50vh;
+    margin-top: 200px;
     width: 100%;
+    text-align: center;
     
 }
+footer ul{
+    list-style-type: none;
+    
+}
+footer .footerContent{
+   
+}
+footer li{
+    display: inline-block;
+    margin-left:10px;
+    
+}
+footer .nav-link{
+    font-size: 17px;
+}
+footer .nav-link:hover {
+    font-size: 25px;
+    transition: 100ms;
+}
+    
+    
+    
