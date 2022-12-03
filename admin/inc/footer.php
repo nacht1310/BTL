@@ -1,12 +1,8 @@
- <div class="clear">
+            <div class="footer">
+                <p>
+                &copy; Copyright <a href="https://www.w3schools.com/php/">Training with live project</a>. All Rights Reserved.
+                </p>
+            </div>
         </div>
-    </div>
-    <div class="clear">
-    </div>
-    <div id="site_info">
-        <p>
-         &copy; Copyright <a href="http://trainingwithliveproject.com">Training with live project</a>. All Rights Reserved.
-        </p>
-    </div>
-</body>
+    </body>
 </html>

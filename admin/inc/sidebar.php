@@ -1,41 +1,43 @@
-<div class="grid_2">
-    <div class="box sidemenu">
-        <div class="block" id="section-menu">
-            <ul class="section menu">
-               <li><a class="menuitem">Site Option</a>
+<div style="display: flex; height: 100%; position:relative;">
+    <div class="sidebar">
+        <div class="sidemenu">
+            <ul class="menu">
+                <li class="option menuitem">Site Option  
                     <ul class="submenu">
-                        <li><a href="titleslogan.php">Title & Slogan</a></li>
-                        <li><a href="social.php">Social Media</a></li>
-                        <li><a href="copyright.php">Copyright</a></li>
+                        <li class="submenu-item" id="tilte-slogan"> Title & Slogan </li>
+                        <li class="submenu-item" id="social"> Social Media </li>
+                        <li class="submenu-item" id="copyright"> Copyright </li>
                         
                     </ul>
                 </li>
-				
-                 <li><a class="menuitem">Update Pages</a>
+                    
+                <li class="update menuitem">Update Pages 
                     <ul class="submenu">
-                        <li><a>About Us</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li class="submenu-item" id="about-us">About Us </li>
+                        <li class="submenu-item" id="contact-us">Contact Us </li>
                     </ul>
                 </li>
-				<li><a class="menuitem">Slider Option</a>
+
+                <li class="slider menuitem">Slider Option 
                     <ul class="submenu">
-                        <li><a href="slideradd.php">Add Slider</a> </li>
-                        <li><a href="sliderlist.php">Slider List</a> </li>
+                        <li class="submenu-item" id="slider"> Add Slider  </li>
+                        <li class="submenu-item"> Slider List  </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Category Option</a>
+
+                <li class="category menuitem">Category Option 
                     <ul class="submenu">
-                        <li><a href="catadd.php">Add Category</a> </li>
-                        <li><a href="catlist.php">Category List</a> </li>
+                        <li class="submenu-item" id="category"> Add Category  </li>
+                        <li class="submenu-item"> Category List  </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Product Option</a>
+
+                <li class="product menuitem">Product Option 
                     <ul class="submenu">
-                        <li><a href="productadd.php">Add Product</a> </li>
-                        <li><a href="productlist.php">Product List</a> </li>
+                        <li class="submenu-item" id="product"> Add Product  </li>
+                        <li class="submenu-item"> Product List  </li>
                     </ul>
                 </li>
             </ul>
         </div>
     </div>
-</div>

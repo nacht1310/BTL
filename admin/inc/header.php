@@ -13,68 +13,51 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <title>Admin</title>
-    <link rel="stylesheet" type="text/css" href="css/reset.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/text.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/grid.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/layout.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="css/nav.css" media="screen" />
-    <link href="css/table/demo_page.css" rel="stylesheet" type="text/css" />
-    <!-- BEGIN: load jquery -->
-    <script src="js/jquery-1.6.4.min.js" type="text/javascript"></script>
-    <script type="text/javascript" src="js/jquery-ui/jquery.ui.core.min.js"></script>
-    <script src="js/jquery-ui/jquery.ui.widget.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.ui.accordion.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.effects.core.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.effects.slide.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.ui.mouse.min.js" type="text/javascript"></script>
-    <script src="js/jquery-ui/jquery.ui.sortable.min.js" type="text/javascript"></script>
-    <script src="js/table/jquery.dataTables.min.js" type="text/javascript"></script>
-    <!-- END: load jquery -->
-    <script type="text/javascript" src="js/table/table.js"></script>
-    <script src="js/setup.js" type="text/javascript"></script>
-	 <script type="text/javascript">
-        $(document).ready(function () {
-            setupLeftMenu();
-		    setSidebarHeight();
-        });
-    </script>
+    <link rel="stylesheet" href="../../vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/general.css">
+    <link rel="stylesheet" href="./css/header.css">
+    <link rel="stylesheet" href="./css/sidebar.css">
+    <link rel="stylesheet" href="./css/footer.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../vendor/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascript" src="js/click.js"></script>
 
 </head>
-<body>
+
+<body>  
+    <div class="header">
+
+        <div class="logo">
+            <img src="img/livelogo.png" alt="Logo" />
+        </div>
+
+       
+        <ul class="nav-bar">
+            <li>User Profile</li>
+            <li class="header-menu" id="pass">Change Password</li>
+            <li>Visit Website</li>
+        </ul>
+
         
-    <div class="container_12">
-        <div class="grid_12 header-repeat">
-            <div id="branding">
-                <div class="logo">
-                    <img src="img/livelogo.png" alt="Logo" />
-				</div>
+        <div class="admin">
 
-                <div class="grid_12">
-                    <ul class="nav">
-                        <li class="ic-form-style"><a href="#">User Profile</a></li>
-                        <li class="ic-typography"><a href="changepassword.php">Change Password</a></li>
-                        <li class="ic-grid-tables"><a href="inbox.php">Inbox</a></li>
-                        <li class="ic-charts"><a href="#">Visit Website</a></li>
-                    </ul>
-                </div>
-                
-                <div class="admin">
-
-                        <img src="img/img-profile.jpg" alt="Profile Pic">
-                        <div class="marginleft10">
-                            <ul class="inline-ul">
-                                <li>Hello <?php echo Session::get('adminname')?> </li>
-                                <?php
-                                    if(isset($_GET['action']) && $_GET['action']=='logout'){
-                                        //Session::checkSession();
-                                        Session::destroy();
-                                    }
-                                ?>
-                                <li><a href="?action=logout">Logout</a></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+            <img src="img/img-profile.jpg" alt="Profile Pic">
+            <div>
+                <ul class="admin-name">
+                    <li style="font-weight: 900;">Hello <?php echo Session::get('adminname')?> </li>
+                    <?php
+                        if(isset($_GET['action']) && $_GET['action']=='logout'){
+                            //Session::checkSession();
+                            Session::destroy();
+                        }
+                    ?>
+                    <li><a class="log-out" href="?action=logout">Logout</a></li>
+                </ul>
             </div>
+        </div>
 
     </div>
