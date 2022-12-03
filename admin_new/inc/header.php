@@ -37,11 +37,10 @@
 
        
         <ul class="nav-bar">
-            <li><a href="index.php">Dashboard</a> </li>
-            <li><a href="#">User Profile</a></li>
-            <li><a href="changepassword.php">Change Password</a></li>
-            <li><a href="inbox.php">Inbox</a></li>
-            <li><a href="#">Visit Website</a></li>
+            <li>User Profile</li>
+            <li class="header-menu" id="pass">Change Password</li>
+            <li class="header-menu" id="inbox">Inbox</li>
+            <li>Visit Website</li>
         </ul>
 
         

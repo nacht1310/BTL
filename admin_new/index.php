@@ -1,5 +1,8 @@
 <?php include 'inc/header.php';?>
 <?php include 'inc/sidebar.php';?>
+<?php include "../helper/format.php" ?>
+<?php include 'changepass.php' ?>
+
     <div class="container">
         <h4>Site Option</h4>
         <div class="section">
@@ -88,7 +91,7 @@
               
                 <form>
                     <label>Slider Title: </label><br>
-                    <input type="text" placeholder="Enter Website Title"  name="slider-title" class="medium" ><br>
+                    <input type="text" placeholder="Enter Slider Title"  name="slider-title" class="medium" ><br>
                             
                     <label>Slider Image: </label><br>
                     <input type="file" name="slider-image" class="medium" ><br>
@@ -106,7 +109,7 @@
               
                 <form>
                     <label>Category Name: </label><br>
-                    <input type="text" placeholder="Enter Website Title"  name="category-name" class="medium" ><br>
+                    <input type="text" placeholder="Enter category name"  name="category-name" class="medium" ><br>
                                        
                     <input type="submit" name="submit" Value="Update" class="button">
                 </form>
@@ -115,12 +118,12 @@
 
         <h4>Product Option</h4>
         <div class="section">
-        <div class="category" id="product-pos">
+            <div class="category" id="product-pos">
                 <h5>Add Product</h5>
               
                 <form>
                     <label>Product Name: </label><br>
-                    <input type="text" placeholder="Enter Website Title"  name="category-name" class="medium" ><br>
+                    <input type="text" placeholder="Enter product name"  name="product-name" class="medium" ><br>
 
                     <label>Category: </label><br>
                     <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="category-dropdown">
@@ -164,6 +167,40 @@
             </div>
         </div>
 
+        <h4>Change Password</h4>
+        <div class="section">
+            <div class="category" id="pass-pos">
+             
+                <form action="index.php" method="POST">
+                    <label>Enter your old password: </label><br>
+                    <input type="password" placeholder="Enter Your old password"  name="pass_old" class="medium" ><br>
+
+                    <label>Enter your new password: </label><br>
+                    <input type="password" placeholder="Enter Your new password"  name="pass_new" class="medium" ><br>
+
+                    <label>Confirm your new password: </label><br>
+                    <input type="password" placeholder="Enter Your new password again"  name="pass_confirm" class="medium" ><br>
+                                       
+                    <input type="submit" name="submit" Value="Change" class="button">
+                </form>
+
+            </div>
+        </div>
+
         <button class="scroll-to-top"><span class="material-icons">keyboard_double_arrow_up</span></button>
     </div>
 <?php include 'inc/footer.php';?>
+
+
+<?php 
+
+    $fm = new Format();
+    if($_SERVER["REQUEST_METHOD"] == "POST") {
+
+        $pass_old = $fm->validation($_POST["pass_old"]);
+        $pass_new = $fm->validation($_POST["pass_new"]);
+        $pass_confirm = $fm->validation($_POST["pass_confirm"]);
+        changepass($pass_old, $pass_new, $pass_confirm);
+    }
+
+?>

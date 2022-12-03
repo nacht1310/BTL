@@ -41,49 +41,7 @@
 
 </head>
 <body>
-    <!-- <div class="container_12">
-        <div class="grid_12 header-repeat">
-            <div id="branding">
-                <div class="floatleft logo">
-                    <img src="img/livelogo.png" alt="Logo" />
-				</div>
-				<div class="floatleft middle">
-                    <div class="grid_12">
-                        <ul class="nav main">
-                            <li class="ic-dashboard"><a href="index.php">Dashboard</a> </li>
-                            <li class="ic-form-style"><a href=""><span>User Profile</span></a></li>
-                            <li class="ic-typography"><a href="changepassword.php"><span>Change Password</span></a></li>
-                            <li class="ic-grid-tables"><a href="inbox.php"><span>Inbox</span></a></li>
-                            <li class="ic-charts"><a href=""><span>Visit Website</span></a></li>
-                        </ul>
-                    </div>
-				</div>
-                <div class="floatright">
-                    <div class="floatleft">
-                        <img src="img/img-profile.jpg" alt="Profile Pic" /></div>
-                    <div class="floatleft marginleft10">
-                        <ul class="inline-ul floatleft">
-                            <li>Hello <?php echo Session::get('adminname')?> </li>
-                            <?php
-                                if(isset($_GET['action']) && $_GET['action']=='logout'){
-                                    //Session::checkSession();
-                                    Session::destroy();
-                                }
-                            ?>
-                            <li><a href="?action=logout">Logout</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="clear">
-                </div>
-            </div>
-        </div>
-        <div class="clear">
-        </div>
         
-        <div class="clear">
-        </div>  -->
-    
     <div class="container_12">
         <div class="grid_12 header-repeat">
             <div id="branding">
@@ -93,7 +51,6 @@
 
                 <div class="grid_12">
                     <ul class="nav">
-                        <li class="ic-dashboard"><a href="index.php">Dashboard</a> </li>
                         <li class="ic-form-style"><a href="#">User Profile</a></li>
                         <li class="ic-typography"><a href="changepassword.php">Change Password</a></li>
                         <li class="ic-grid-tables"><a href="inbox.php">Inbox</a></li>

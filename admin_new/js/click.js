@@ -10,6 +10,13 @@ function clickTo() {
             scrollTop: $(`#${id}-pos`).offset().top
         }, "slow");
     })
+
+    $(".header-menu").click(function() {
+        const id = $(this).attr("id");
+        $('html, body').animate({
+            scrollTop: $(`#${id}-pos`).offset().top
+        }, "fast");
+    })
 }
 
 function scrollToTop() {
@@ -22,7 +29,7 @@ function scrollToTop() {
         }
     })
     $(".scroll-to-top").click(function(){
-        $("html, body").animate({scrollTop: 0}, "slow")
+        $("html, body").animate({scrollTop: 0}, "fast")
         return false
     })
 }
