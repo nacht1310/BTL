@@ -18,24 +18,15 @@
                     </ul>
                 </li>
 
-                <li class="slider menuitem">Slider Option 
-                    <ul class="submenu">
-                        <li class="submenu-item" id="slider"> Add Slider  </li>
-                        <li class="submenu-item"> Slider List  </li>
-                    </ul>
-                </li>
-
                 <li class="category menuitem">Category Option 
                     <ul class="submenu">
                         <li class="submenu-item" id="category"> Add Category  </li>
-                        <li class="submenu-item"> Category List  </li>
                     </ul>
                 </li>
 
                 <li class="product menuitem">Product Option 
                     <ul class="submenu">
                         <li class="submenu-item" id="product"> Add Product  </li>
-                        <li class="submenu-item"> Product List  </li>
                     </ul>
                 </li>
             </ul>

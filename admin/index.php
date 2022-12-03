@@ -84,24 +84,6 @@
             </div>
         </div>
 
-        <h4>Slider Option</h4>
-        <div class="section">
-            <div class="category" id="slider-pos">
-                <h5>Add Slider</h5>
-              
-                <form>
-                    <label>Slider Title: </label><br>
-                    <input type="text" placeholder="Enter Slider Title"  name="slider-title" class="medium" ><br>
-                            
-                    <label>Slider Image: </label><br>
-                    <input type="file" name="slider-image" class="medium" ><br>
-            
-                    <input type="submit" name="submit" Value="Update" class="button">
-                </form>
-            </div>
-           
-        </div>
-
         <h4>Category Option</h4>
         <div class="section">
             <div class="category" id="category-pos">
