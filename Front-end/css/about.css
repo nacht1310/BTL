@@ -1,0 +1,43 @@
+#about{
+    width:100%;
+    height:150vh;
+    background-size: 100%;
+    background-image: url(../img/About-us/about-1.jpg);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    position: relative;
+    
+}
+#about .content{
+    position: absolute;
+    top: 200px;
+    left:300px;
+    max-width:550px;
+    color: #bf8218;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 50px;
+}
+#about .aboutContent{
+    background-color: rgba(31, 30, 30, 0.671);
+    width:400px;
+    height: 500px;   
+    
+    
+    position: absolute;
+    bottom: 0;
+    right:50px;
+    box-shadow: 5px 5px 5px 5px rgba(171, 166, 166, 0.63);
+    color:white;
+    
+    
+}
+.aboutContent h2{
+    color:white;
+    text-align: center;
+    margin-top: 25px;
+}
+.aboutContent p{
+    text-align: justify;
+    margin-right: 4px;
+    margin-left:4px;
+}
