@@ -6,10 +6,10 @@
 	<link href="https://fonts.googleapis.com/css?family=Roboto+Slab:100,300,400,700&amp;subset=vietnamese" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Oswald:300,400,700" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Dancing+Script:400,700" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 
 	<script type="text/javascript" src="vendor/bootstrap.js"></script>
-
+	<script src="../vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
 
  	<script type="text/javascript" src="vendor/isotope.pkgd.min.js"></script>
  	<script type="text/javascript" src="vendor/imagesloaded.pkgd.min.js"></script>
@@ -17,7 +17,10 @@
 
 	<link rel="stylesheet" href="vendor/bootstrap.css">
 	<link rel="stylesheet" href="vendor/font-awesome.css">
+	<link rel="stylesheet" href="../vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+	<link rel="stylesheet" href="../vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
 	<link rel="stylesheet" href="1.css">
+	<link rel="stylesheet" href="../css/category.css">
  </head>
 <body >
 

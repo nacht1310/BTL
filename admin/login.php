@@ -23,7 +23,7 @@
 		<h1>Admin Login</h1>
 		<form action="login.php" method="post">
 			
-			<span>
+			<span style="color: white;">
 				<?php
 					if(isset($login_check)){
 						echo $login_check;
