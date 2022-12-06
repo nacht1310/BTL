@@ -5,8 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Header</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../vendor/bootstrap.bundle.min.js"></script>
+    <script src="../vendor/OwlCarousel2-2.3.4/dist/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="../js/1.js"></script>
+
+    <link rel="stylesheet" href="vendor/bootstrap.min.css">
+    <link rel="stylesheet" href="vendor/font-awesome.css">
+    <link rel="stylesheet" href="../vendor/OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="../vendor/OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css">
+
+    <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />

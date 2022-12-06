@@ -1,0 +1,139 @@
+.owl-carousel {
+    margin-bottom: 20px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    position: relative;
+    background-color: #f3f5f9;
+    padding: 0 20px 0 20px;
+    border-radius: 10px;
+}
+
+.item .watch-image {
+    width: 100%;
+    height: 250px;
+    top: 0;
+    left: 0;
+    margin-bottom: 10px;
+}
+
+.item .watch-name {
+    font-weight: 500;
+}
+
+.filter {
+    display: flex;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+    border: 1px solid #C3C2C2;
+    padding: 10px;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.filter .button, .filter .filter-button {
+    width: 125px;
+    height: 50px;
+    box-shadow: 0 0 2px 1px #C3C2C2;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 10px;
+    cursor: pointer;
+    margin: 0 20px 0 0;
+}
+
+.filter .button {
+    background-image: url("../img/expand-arrow.png");
+    background-repeat: no-repeat;
+    background-position: 5px 12px;
+}
+
+.filter button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.filter-board {
+    border: 1px solid gray;
+    margin-bottom: 20px;
+    overflow-y: roll;
+    height: 700px;
+    display: none;
+}
+
+.filter-board.active {
+    display: flex;
+    flex-direction: column;
+}
+
+.filter-board .btn {
+    color: white;
+    background-color: black;
+    height: 50px;
+    width: 200px;
+    font-weight: 500;
+}
+
+.filter-board .menu {
+    width: 25%;
+    height: 100%;
+    overflow-y: scroll;
+    position: relative;
+    right: 0;
+}
+
+.filter-board .menu-item {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: large;
+}
+
+.filter-board .menu-item:hover {
+    background-color: #C3C2C2;
+    color: white;
+}
+
+.filter-board .board {
+    width: 75%;
+    padding: 20px;
+    display: none;
+}
+
+.filter-board .board.active {
+    display: flex;
+}
+
+.product-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+.product-list .item {
+    width: 22%;
+    background-color: transparent;
+    padding: 0;
+}
+
+.product-list .item .watch-image {
+    width: 100%;
+    height: 300px;
+    top: 0;
+    left: 0;
+}
+
+.product-list .item .watch-name {
+    font-weight: 500;
+}
+
