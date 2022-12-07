@@ -107,10 +107,16 @@
     width: 75%;
     padding: 20px;
     display: none;
+    overflow-y: scroll;
 }
 
 .filter-board .board.active {
     display: flex;
+    flex-direction: column;
+}
+
+.board .check {
+    margin-bottom: 10px;
 }
 
 .product-list {
@@ -141,4 +147,6 @@
 .product-list .item .watch-name {
     font-weight: 500;
 }
+
+
 
