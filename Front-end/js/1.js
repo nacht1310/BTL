@@ -23,8 +23,8 @@
 
 
 function clickFilter() {
-	$(".button").on("click", function() {
-		const name = $(this).attr("id");
+	$(".button, .menu-item").on("click", function() {
+		const name = $(this).attr("id").split("-")[0];
 
 		const active = $(".filter-board").hasClass("active");
 		const activeName = $(".board.active").attr("id") ?? "";
@@ -33,8 +33,12 @@ function clickFilter() {
 		}
 		else {
 			$(".board").removeClass("active");
+			$(".menu-item").removeClass("active");
+
 			$(".filter-board").addClass("active");
 			$(`#${name}-board`).addClass("active");
+			$(`#${name}-menu`).addClass("active");
 		}
+
 	})
 }

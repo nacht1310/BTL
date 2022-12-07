@@ -20,16 +20,13 @@
 #about .aboutContent{
     background-color: rgba(31, 30, 30, 0.671);
     width:400px;
-    height: 500px;   
-    
-    
+    height: 400px;   
     position: absolute;
     bottom: 0;
     right:50px;
     box-shadow: 5px 5px 5px 5px rgba(171, 166, 166, 0.63);
     color:white;
-    
-    
+    padding: 10px;
 }
 .aboutContent h2{
     color:white;

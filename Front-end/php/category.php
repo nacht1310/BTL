@@ -1,3 +1,29 @@
+<?php include "../lib/database.php" ?>
+
+<?php 
+    $db = new Database();
+    $query = "SELECT 'name' FROM 'tbl_brand'";
+    $result = $db->select($query);
+
+    while($value = $result->fetch_assoc()) {
+        $brand = $value;
+    }
+
+    $query = "SELECT 'name' FROM 'tbl_model'";
+    $result = $db->select($query);
+
+    while($value = $result->fetch_assoc()) {
+        $model = $value;
+    }
+
+    $query = "SELECT 'year' FROM 'tbl_year'";
+    $result = $db->select($query);
+
+    while($value = $result->fetch_assoc()) {
+        $year = $value;
+    }
+?>
+
 <?php include "./header.php" ?>
 
 <div class="container">
@@ -70,33 +96,38 @@
     <form class="filter-board">
         <div style="display: flex; width:100%; height:85%">
             <div class="menu">
-                <div class="menu-item" id="brand">
+                <div class="menu-item" id="brand-menu">
                     <div>Brand</div>
                 </div>
 
-                <div class="menu-item" id="model">
+                <div class="menu-item" id="model-menu">
                     <div>Model</div>
                 </div>
 
-                <div class="menu-item" id="year">
+                <div class="menu-item" id="year-menu">
                     <div>Year</div>
                 </div>
 
-                <div class="menu-item" id="price">
+                <div class="menu-item" id="price-menu">
                     <div>Price</div>
                 </div>
             </div>
             <div class="board" id="brand-board">
                 <h3>Brand</h3>
+                <h4>All Brand</h4>
             </div>
             <div class="board" id="model-board">
                 <h3>Model</h3>
+                <h4>All Model</h4>
             </div>
             <div class="board" id="year-board">
                 <h3>Year</h3>
+                <h4>All Year</h4>
+                <input type="checkbox">
             </div>
             <div class="board" id="price-board">
                 <h3>Price</h3>
+
             </div>
         </div>
         <div style="display: flex; flex-direction: row-reverse;padding:20px; height:15%">
