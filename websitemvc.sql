@@ -96,7 +96,16 @@ CREATE TABLE `tbl_brand` (
 --
 
 INSERT INTO `tbl_brand` (`id`, `name`) VALUES
-(1, 'Rolex');
+(1, 'Rolex'),
+(2, 'Patek Philippe'),
+(3, 'Audemars Piguet'),
+(4, 'A.Lange & Söhne'),
+(5, 'Omega'),
+(6, 'Jaeger-LeCoultre'),
+(7, 'IWC Schaffhausen'),
+(8, 'Cartier'),
+(9, 'Nordgreen'),
+(10, 'Vacheron Constantin');
 
 -- --------------------------------------------------------
 
@@ -126,6 +135,33 @@ INSERT INTO `tbl_year` (`id`, `year`) VALUES
 CREATE TABLE `tbl_model` (
   `id` int(11) NOT NULL,
   `name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Đang đổ dữ liệu cho bảng `tbl_model`
+--
+
+INSERT INTO `tbl_model` (`id`, `name`) VALUES
+(1, 'Cartier Santos'),
+(2, 'Jaeger-LeCoultre Reverso'),
+(3, "IWC Pilot's Watch"),
+(4, 'Patek Philippe Perpetual Calendar Chronograph'),
+(5, 'Rolex Datejust'),
+(6, 'Breitling Navitimer'),
+(7, 'Rolex Submariner'),
+(8, 'Omega Speedmaster'),
+(9, 'Zenith El Primero'),
+(10, 'Audemars Piguet Royal Oak');
+
+-- --------------------------------------------------------
+
+CREATE TABLE `tbl_product` (
+  `id` int(11) NOT NULL,
+  `name` varchar(255) NOT NULL,
+  `brand` varchar(255) NOT NULL,
+  `model` varchar(255) NOT NULL,
+  `price` int(11) NOT NULL,
+  
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
