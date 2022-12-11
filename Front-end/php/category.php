@@ -1,4 +1,5 @@
 <?php include "../lib/database.php" ?>
+<?php include "./category-support.php" ?>
 
 <?php 
     $db = new Database();
@@ -24,6 +25,20 @@
         $year[$i] = $result->fetch_assoc();
     }
 
+    $checkYear = [];
+    if(isset($_GET['year'])) {
+        $checkYear = $_GET['year'];
+    }
+    
+    $checkBrand =[];
+    if(isset($_GET['brand'])) {
+        $checkBrand = $_GET['brand'];
+    }
+
+    $checkModel =[];
+    if(isset($_GET['model'])) {
+        $checkModel = $_GET['model'];
+    }
 ?>
 
 
@@ -96,7 +111,7 @@
         
     </div>
 
-    <form class="filter-board" action="category.php" method="POST">
+    <form class="filter-board" action="category.php" method="GET">
         <div style="display: flex; width:100%; height:85%">
             <div class="menu">
                 <div class="menu-item" id="brand-menu">
@@ -120,50 +135,7 @@
                 <h4>All Brand</h4>
 
                 <div class="row">
-                    <?php 
-                    $n= floor(count($brand)/3);
-                        echo '<div style="width:33%">';
-                        for($i = 0; $i < $n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="brand" value="';
-                            echo $brand[$i]["name"];
-                            echo '">
-                                <label for="brand">';
-                            echo $brand[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = $n+1; $i < 2*$n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="brand" value="';
-                            echo $brand[$i]["name"];
-                            echo '">
-                                <label for="brand">';
-                            echo $brand[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = 2*$n+1; $i < count($brand); $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="brand" value="';
-                            echo $brand[$i]["name"];
-                            echo '">
-                                <label for="brand">';
-                            echo $brand[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-                    ?>
+                    <?php displayBrand($brand, $checkBrand) ?>
                 </div>
             </div>
             <div class="board" id="model-board">
@@ -171,105 +143,34 @@
                 <h4>All Model</h4>
 
                 <div class="row">
-                    <?php 
-                    $n= floor(count($model)/3);
-                        echo '<div style="width:33%">';
-                        for($i = 0; $i < $n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="model" value="';
-                            echo $model[$i]["name"];
-                            echo '">
-                                <label for="model">';
-                            echo $model[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = $n+1; $i < 2*$n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="model" value="';
-                            echo $model[$i]["name"];
-                            echo '">
-                                <label for="model">';
-                            echo $model[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = 2*$n+1; $i < count($model); $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="model" value="';
-                            echo $model[$i]["name"];
-                            echo '">
-                                <label for="model">';
-                            echo $model[$i]["name"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-                    ?>
+                <?php displayModel($model, $checkModel) ?>
                 </div>
             </div>
             <div class="board" id="year-board">
                 <h3>Year</h3>
 
-                <div class="row">
-                    <?php 
-                    $n= floor(count($year)/3);
-                        echo '<div style="width:33%">';
-                        for($i = 0; $i < $n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="year" value="';
-                            echo $year[$i]["year"];
-                            echo '">
-                                <label for="year">';
-                            echo $year[$i]["year"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = $n+1; $i < 2*$n+1; $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="year" value="';
-                            echo $year[$i]["year"];
-                            echo '">
-                                <label for="year">';
-                            echo $year[$i]["year"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-
-                        echo '<div style="width:33%">';
-                        for($i = 2*$n+1; $i < count($year); $i++) {
-                            echo '<div class="check">
-                                <input type="checkbox" name="year" value="';
-                            echo $year[$i]["year"];
-                            echo '">
-                                <label for="year">';
-                            echo $year[$i]["year"];
-                            echo '</label>
-                            </div>
-                            ';
-                        }
-                        echo '</div>';
-                    ?>
+                <div class="row"> 
+                    <?php displayYear($year, $checkYear) ?>
+                    
                 </div>
             </div>
             <div class="board" id="price-board">
                 <h3>Price</h3>
-
+                <div class="slider">
+                    <div class="slider-track"></div>
+                    <input type="range" name="range-a" id="range-a" min="0" max="100000" value="0" oninput="slideA()">
+                    <input type="range" name="range-b" id="range-b" min="0" max="100000" value="100000" oninput="slideB()">
+                </div>
+                <div class="values">
+                    <div>
+                        <label style="font-weight:500;" for="min" >Minimum Price</label><br>
+                        <input type="text" name="min" id="min">
+                    </div>
+                    <div>
+                        <label style="font-weight:500;" for="max" >Maximum Price</label><br>
+                        <input type="text" name="max" id="max">
+                    </div>
+                </div>
             </div>
             
         </div>
