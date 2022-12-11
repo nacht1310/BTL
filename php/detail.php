@@ -1,25 +1,31 @@
 <?php include "./header.php" ?>
 
 <?
-	if (!isset($_GET['id'])) {
-		header('location: shop.php');
-	} else {
-		$idSP = $_GET['id'];
-	}
+	$id = "";
+  if (isset($_GET["id"]))
+  {
+    $id= $_GET["id"];
+  }
+
+  $sql_query = "SELECT * FROM tbl_products WHERE prd_id = $id"
 ?>
 
 <div class="container"> 
+  
+    
     <div class = "card-wrapper">
       <div class = "card">
         <!-- card left -->
         <div class = "product-imgs">
           <div class = "img-display">
-            <div class = "img-showcase">
+          
+            <div class = "img-showcase"> 
               <img src = "../images/product/<?php echo $row['img']; ?>" alt = "watchs image">
               <img src = "../images/product/<?php echo $row['img1']; ?>" alt = "watchs image">
               <img src = "../images/product/<?php echo $row['img2']; ?>" alt = "watchs image">
               <img src = "../images/product/<?php echo $row['img3']; ?>" alt = "watchs image">
             </div>
+          
           </div>
           <div class = "img-select">
             <div class = "img-item">
@@ -44,13 +50,15 @@
             </div>
           </div>
         </div>
+        
+        
         <!-- card right -->
         <div class = "product-content">
           <h2 class = "product-title">SKY-DWELLER</h2>
           <a href = "#" class = "product-link">visit Rolex store</a>
 
           <div class = "product-price">
-           <p class = "last-price">Price: $price = <?php $row['GIASP']; ?> </p>
+           <p class = "last-price">Price: <?php $price =  $row['GIASP']; ?> </p>
           </div>
 
           <div class = "product-detail">
@@ -66,14 +74,18 @@
           </div>
 
           <div class = "purchase-info">
-            <input type = "number" min = "0" value = "1">
+            
             <button type = "button" class = "btn">
-              Add to Cart <i class = "fas fa-shopping-cart"></i>
+              Contact to buy <i class = "fas fa-shopping-cart"></i>
             </button>
             </div>
         </div>
       </div>
+
     </div>
+  
+  
+    
 </div>
        
 <?php include "./footer.php" ?>
