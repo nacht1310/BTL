@@ -1,0 +1,73 @@
+
+header {
+    background-color: white;
+    height:120px;
+    width: 100%;
+    display: flex;  
+       
+}
+.brand {
+    line-height: 120px;
+    font-size: 32px;
+    margin-left: 6px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+.logoBrand{
+    height:60px;
+    margin-bottom: 5px;
+}
+.menu {
+    position: absolute;    
+    right:300px;
+    
+}
+.menu ul{
+    list-style-type: none;
+    
+}
+
+.navItem{
+    text-decoration: none;       
+    color: black;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-size: 25px;
+    line-height: 120px;
+    font-family: serif;
+}
+header a:hover{
+    font-weight: bold;
+    font-size: 30px;
+    color:black;
+    
+}
+.un {
+    transition: 500ms;
+    border-bottom: 1px solid transparent;
+}
+  
+.un:hover {
+    border-color: black;
+}
+
+#logReg{
+    position: absolute;
+    width:160px;
+    height: 44px;
+    margin-right:50px;
+    background-color: #383E28;
+    top:38px;
+    right: 50px;;
+    text-align: center;
+}
+#logReg a{
+    font-size: 17px;
+    text-decoration: none;
+    color:white;
+    line-height: 44px;
+    
+}
+
+/*Responsive*/
+
