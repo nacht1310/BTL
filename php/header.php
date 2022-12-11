@@ -23,6 +23,8 @@
     
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/news.css">
     <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="../css/footer.css">

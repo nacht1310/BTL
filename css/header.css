@@ -14,7 +14,8 @@ header {
     
 }
 .logoBrand{
-    height:60px;
+    width: auto;
+    height:100%;
     margin-bottom: 5px;
 }
 .menu {
@@ -28,6 +29,7 @@ header {
 }
 
 .navItem{
+    display: flex;
     text-decoration: none;       
     color: black;
     padding-left: 10px;

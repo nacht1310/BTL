@@ -10,9 +10,10 @@ footer ul{
     list-style-type: none;
     
 }
-footer .footerContent{
-   
+footer .logoBrand {
+    height: 50px;
 }
+
 footer li{
     display: inline-block;
     margin-left:10px;
