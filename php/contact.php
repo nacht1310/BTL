@@ -1,5 +1,24 @@
 <?php include "./header.php" ?>
+<?php include "../lib/database.php" ?>
 
+<?php 
+  $db = new Database();
+  if(isset($_POST['send'])) {
+    $name = $_POST['name'];
+    $email = $_POST['email'];
+    $phone = $_POST['phone'];
+    $message = $_POST['message'];
+
+    $query = "INSERT INTO tbl_customer (cus_name, cus_mail, cus_phone, cus_messages) VALUES ('$name', '$email', '$phone', '$message')";
+    $result = $db->insert($query);
+    if($result != false) {
+      echo '<script>swal("We have successfully receive your information. We would contact you as soon as possible!");</script>';
+    }
+    else {
+      echo '<script>swal("We fail to receive your information. Please try again!");</script>';
+    }
+  }
+?>
    
     <div class="bannerContact">
         <h2 data-aos="fade-down">Contact Us</h2>
@@ -15,7 +34,7 @@
   
   <!-- Left contact page --> 
     
-    <form id="contact-form" class="form-horizontal" role="form">
+    <form id="contact-form" class="form-horizontal" role="form" action="contact.php" method="POST">
        
       <div class="form-group">
         <div class="col-sm-12">
@@ -33,9 +52,9 @@
           <input type="phone" class="form-control" id="phone" placeholder="PHONE" name="phone" value="" required>
         </div>
       </div>
-      <textarea class="form-control" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+      <textarea class="form-control" rows="10" placeholder="PLEASE LET US KNOW IF YOU HAVE ANY TYPE OF PRODUCT THAT YOU INTERESTED IN" name="message" required></textarea>
       
-      <button class="btn btn-primary send-button" id="submit" type="submit" value="SEND">
+      <button class="btn btn-primary send-button" id="submit" type="submit" name="send">
         <div class="alt-send-button">
           <i class="fa fa-paper-plane"></i><span class="send-text">SEND</span>
         </div>

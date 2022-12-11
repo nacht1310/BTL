@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-DROP TABLE IF EXISTS tbl_admin, tbl_brand, tbl_model, tbl_products, tbl_user, tbl_year;
+DROP TABLE IF EXISTS tbl_admin, tbl_brand, tbl_model, tbl_products, tbl_user, tbl_year, tbl_customer;
 
 --
 -- Table structure for table `products`
@@ -181,9 +181,19 @@ INSERT INTO `tbl_year` (`id`, `year`) VALUES
 (9, 2014),
 (10, 2013);
 
+-- --------------------------------------------------------
+
 --
--- Indexes for dumped tables
+-- Table structure for table `tbl_customer`
 --
+
+CREATE TABLE `tbl_customer` (
+  `cus_name` varchar(255) NOT NULL,
+  `cus_mail` varchar(255) NOT NULL,
+  `cus_phone` varchar(30) NOT NULL,
+  `cus_messages` varchar(1000) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 
 
 
