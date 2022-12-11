@@ -38,3 +38,27 @@
     margin-right: 4px;
     margin-left:4px;
 }
+@media (max-width:900px) {
+    #about{
+        height: 80vh;
+    }
+    .content h2{
+        font-size: 25px;
+    }
+    .aboutContent{
+        bottom: 90px;
+    }
+ }
+ @media (max-width:500px) {
+    .content h2{
+        display: none;
+    }
+    #about .aboutContent{
+        width: 280px;
+        height:348px;
+        right: 0;
+    }
+    .aboutContent p{
+        font-size: 10px;
+    }
+ }

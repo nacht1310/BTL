@@ -4,7 +4,18 @@ header {
     height:120px;
     width: 100%;
     display: flex;  
-       
+    justify-content: space-between;
+}
+.overlay{
+    position: fixed;
+    top:0;
+    right: 0;
+    left:0;
+    bottom:0;
+    background-color: rgba(0,0,0,0.3);
+    z-index: 3;
+    display: none;
+
 }
 .brand {
     line-height: 120px;
@@ -70,6 +81,64 @@ header a:hover{
     line-height: 44px;
     
 }
-
+.nav-btn{
+    width:30px;
+    height: 30px;
+    margin-top:50px;
+    display: none;
+    margin-left:15px;
+}
 /*Responsive*/
 
+@media (max-width:1023px) {
+   .nav-btn{
+    display:block;
+   }
+   .menu{
+    display: none;
+   }
+   #logReg{
+    display: none;
+   }
+}
+.menu-mobile{
+    position: fixed;
+    top:0;
+    right:0;
+    bottom:0;
+    max-width: 100%;
+    background-color: #fff;
+    z-index: 4;
+    width: 50%;
+    transform: translateX(100%);
+    transition: transform linear 0.2s;
+    
+}
+.nav-mobile{
+    list-style-type: none;
+    margin-top: 35px;
+}
+.nav-mobile .navItem {
+    font-size: 24px;
+    line-height: 60px;
+    
+}
+.nav-close{
+    width: 16px;
+    height: 16px;
+    color: gray;
+    position: absolute;
+    top:25px;
+    right:10px;
+}
+.menu-input{
+    display: none;
+}
+.menu-input:checked ~ .overlay{
+    display: block;
+    
+}
+.menu-input:checked ~ .menu-mobile{
+    transform: translateX(0%);
+    
+}
