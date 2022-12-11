@@ -1,5 +1,5 @@
-<?php
-  echo '<div class="container-fluid">
+
+<div class="container-fluid">
   <div id="product">
       <h3 class="productHeading">PRODUCT</h3>
       <div class="productBanner">
@@ -13,5 +13,4 @@
     </div>
 </div>
 
-?>
     
