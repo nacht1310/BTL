@@ -1,7 +1,7 @@
 <?php
-    include "../Front-end/lib/session.php";
+    include "../lib/session.php";
     Session::checkLogin();
-    include "../Front-end/lib/database.php";
+    include "../lib/database.php";
     include "../helper/format.php";
 
 ?>

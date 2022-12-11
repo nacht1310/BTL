@@ -47,7 +47,7 @@
           <a class="navItem un" href="#about">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="navItem un">Product</a> 
+          <a class="navItem un" href="./php/category.php">Product</a> 
         </li>
         <li class="nav-item">
           <a class="navItem un" href="#news">News</a>
@@ -59,7 +59,7 @@
       
     </div>
     
-    <div id="logReg"><a href="#">Login/Register</a></div>
+    <div id="logReg"><a href="./php/loginchoose.php">Login/Register</a></div>
     
     
   </header>
