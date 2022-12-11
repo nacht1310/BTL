@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/category.css">
+    <link rel="stylesheet" href="../css/detail.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>

@@ -1,4 +1,4 @@
-<?php include "./inc/header.php" ?>
+<?php include "./header.php" ?>
 <div class="container"> 
     <div class = "card-wrapper">
       <div class = "card">
@@ -81,4 +81,4 @@
     </div>
 </div>
        
-<?php include "./inc/footer.php" ?>
+<?php include "./footer.php" ?>
