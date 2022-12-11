@@ -30,9 +30,15 @@ body{
 }
 .img-select{
     display: flex;
+    width: 100%;
 }
-.img-item{
+.img-item {
     margin: 0.3rem;
+    width: 25%;
+}
+
+.img-item img {
+    width: 100%;
 }
 .img-item:nth-child(1),
 .img-item:nth-child(2),
@@ -46,7 +52,7 @@ body{
     padding: 2rem 1rem;
 }
 .product-title{
-    font-size: 1rem;
+    font-size: 25px;
     text-transform: capitalize;
     font-weight: 700;
     position: relative;
@@ -57,7 +63,7 @@ body{
     content: "";
     position: absolute;
     left: 0;
-    bottom: 0;
+    bottom: -10px;
     height: 4px;
     width: 80px;
     background: #12263a;

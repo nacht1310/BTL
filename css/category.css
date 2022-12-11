@@ -233,6 +233,10 @@ input[type="range"]::-ms-thumb {
     background-color: transparent;
     padding: 0;
     overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
 }
 
 .product-list .item .watch-image {
@@ -247,7 +251,14 @@ input[type="range"]::-ms-thumb {
 }
 
 .product-list .item .watch-name {
+    font-weight: 900;
+}
+
+.product-list .item .btn {
+    background-color: #d9b402;
+    color: white;
     font-weight: 500;
+    width: 50%;
 }
 
 @media (max-width: 1300px ) {

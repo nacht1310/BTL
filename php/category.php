@@ -33,6 +33,7 @@
     if(isset($_GET['range-b'])) {
         $max = $_GET['range-b'];
     }
+
 ?>
 
 
@@ -173,13 +174,13 @@
         </div>
     </form>
 
-    <div class="product-list">
+    <form class="product-list" action="detail.php" method="POST">
         
         <?php 
             if(empty($checkBrand) && empty($checkModel) && empty($checkYear)) {
                 for($i = 0; $i < count($product); $i++) {
                     if($product[$i]['price'] >= $min && $product[$i]['price'] <= $max) {
-                        echo '<div class="item">
+                        echo '<div class="item" >
                         <img src="../img/product/';
                         echo $product[$i]['img'];
                         echo '" class="watch-image">
@@ -189,6 +190,9 @@
                         <p class="watch-price">';
                         echo '$'.$product[$i]['price'];
                         echo '</p>
+                        <button class="btn" type="submit" name="product" value="';
+                        echo $product[$i]['prd_id'];
+                        echo '">Check Product</button>
                         </div>';
                     }
                 }
@@ -225,6 +229,9 @@
                             <p class="watch-price">';
                             echo '$'.$value2[$i]['price'];
                             echo '</p>
+                            <button class="btn" type="submit" name="product" value="';
+                            echo $value2[$i]['prd_id'];
+                            echo '">Check Product</button>
                             </div>';
                         }
                     }
@@ -232,7 +239,7 @@
             }
         ?>
 
-    </div>
+        </form>
 </div>
 
 <?php include "./footer.php" ?>
