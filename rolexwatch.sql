@@ -23,6 +23,8 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
+DROP TABLE IF EXISTS tbl_admin, tbl_brand, tbl_model, tbl_products, tbl_user, tbl_year;
+
 --
 -- Table structure for table `products`
 --
@@ -32,7 +34,9 @@ CREATE TABLE `tbl_products` (
   `prd_name` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `price` int(10) NOT NULL,
-  `quantity` int(10) NOT NULL,
+  `brand` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `model` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sold` int(10) NOT NULL,
   `description` varchar(500) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img1` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `img2` char(50) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -44,11 +48,11 @@ CREATE TABLE `tbl_products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `tbl_products` (`prd_id`, `prd_name`, `img`, `price`, `quantity`, `description`, `img1`, `img2`, `img3`, `year`) VALUES
-(1, 'Đồng Hồ Rolex Sky Dweller 326238 Mặt Số Đen', 'm326238-0009.webp', 980070000, 5, 'Trong năm 2020, Rolex đã làm mới bộ sưu tập Sky-Dweller của mình với việc sử dụng dây Oysterflex thay cho dây da hay dây kim loại. Mẫu đồng hồ Rolex Sky Dweller 326238-0009 Mặt Số Đen là một trong những thiết kế như vậy, với mặt số màu đen trên nền vàng vàng.', 'sky-dweller1.png', 'sky-dweller2.png', 'sky-dweller3.png', 2020),
-(2, 'Đồng Hồ Rolex Day-Date 40 228348RBR Mặt Số Vàng Champagne Nạm Kim Cương\r\n', 'Day-Date.png', 950060000, 4, 'Dòng đồng hồ Day-Date của Rolex có thể được coi là biểu tượng của sự thành công, sự giàu có. Trong đó, thiết kế nổi bật nhất chính là những phiên bản vàng vàng nguyên khối, với mặt số Champagne giống như chiếc Rolex Day-Date 40 228348RBR-0002. Nếu bạn để ý, Sơn Tùng MTP cũng đã đeo thiết kế như vậy trong MV \"Chúng ta của hiện tại\".', 'Day-Date1.png', 'Day-Date2.png', 'Day-Date3.png', 2015),
-(3, 'Đồng Hồ Rolex Yacht Master 268621 Mặt Số Chocolate', 'Yatch-Master.png', 725406500, 6, 'Đối với mỗi thương hiệu đồng hồ Thụy Sĩ, định hướng phong cách cho những bộ sưu tập của mình là một trong những nét đặc trưng không thể thiếu, giúp các nghệ nhân chế tác đồng hồ dễ dàng tạo ra tuyệt phẩm riêng tùy theo dòng sản phẩm. Đặc biệt, trong số đó, dòng sản phẩm đồng hồ lấy cảm hứng từ biển cả luôn là một trong những chủ đề được các nhà sản xuất hàng đầu khai thác với minh chứng tiêu biểu là Seamaster (nhà Omega), Nautilus (Nhà Patek Philippe). Và khi nói đến Rolex, chúng ta cũng không t',  'Yatch-Master2.png', 'Yatch-Master3.png', 'Yatch-Master4.png', 1992),
-(4, 'Đồng Hồ Rolex Deepsea 116660 Mặt Số Xanh D-Blue', 'Sea-Dweller.png', 339000000, 2, 'Nằm trong bộ sưu tập thợ lặn chuyên nghiệm Sea-Dweller được ra mắt vào năm 1967 khi mà bấy giờ những chiếc Submariner không đủ đáp ứng được những chuyến lặn sâu trong đoàn thám hiểm chuyên nghiệp. Những chiếc Sea-Dweller hiện nay dễ phân biệt được với Submariner nhờ bộ vỏ dày có kích thước lớn hơn cùng với van xả khí heli bên cạnh sườn.',  'Sea-Dweller1.png', 'Sea-Dweller2.png', 'Sea-Dweller3.png', 1967);
+INSERT INTO `tbl_products` (`prd_id`, `prd_name`, `img`, `price`, `brand`, `model`, `sold`, `description`, `img1`, `img2`, `img3`, `year`) VALUES
+(1, 'Rolex Sky Dweller 326238 Black', 'sky-dweller.png', 4000, 'Rolex', 'Jaeger-LeCoultre Reverso', 5000000, 'Trong năm 2020, Rolex đã làm mới bộ sưu tập Sky-Dweller của mình với việc sử dụng dây Oysterflex thay cho dây da hay dây kim loại. Mẫu đồng hồ Rolex Sky Dweller 326238-0009 Mặt Số Đen là một trong những thiết kế như vậy, với mặt số màu đen trên nền vàng vàng.', 'sky-dweller1.png', 'sky-dweller2.png', 'sky-dweller3.png', 2020),
+(2, 'Rolex Day-Date 40 228348RBR Gold Champagne with Diamonds\r\n', 'day-date.png', 80000, 'Cartier', 'Cartier Santos', 100000000, 'Dòng đồng hồ Day-Date của Rolex có thể được coi là biểu tượng của sự thành công, sự giàu có. Trong đó, thiết kế nổi bật nhất chính là những phiên bản vàng vàng nguyên khối, với mặt số Champagne giống như chiếc Rolex Day-Date 40 228348RBR-0002. Nếu bạn để ý, Sơn Tùng MTP cũng đã đeo thiết kế như vậy trong MV \"Chúng ta của hiện tại\".', 'Day-Date1.png', 'Day-Date2.png', 'Day-Date3.png', 2015),
+(3, 'Rolex Yacht Master 268621 Chocolate', 'yatch-master.png', 10000,'Patek Philippe', 'Patek Philippe Perpetual Calendar Chronograph', 2000, 'Đối với mỗi thương hiệu đồng hồ Thụy Sĩ, định hướng phong cách cho những bộ sưu tập của mình là một trong những nét đặc trưng không thể thiếu, giúp các nghệ nhân chế tác đồng hồ dễ dàng tạo ra tuyệt phẩm riêng tùy theo dòng sản phẩm. Đặc biệt, trong số đó, dòng sản phẩm đồng hồ lấy cảm hứng từ biển cả luôn là một trong những chủ đề được các nhà sản xuất hàng đầu khai thác với minh chứng tiêu biểu là Seamaster (nhà Omega), Nautilus (Nhà Patek Philippe). Và khi nói đến Rolex, chúng ta cũng không t',  'Yatch-Master2.png', 'Yatch-Master3.png', 'Yatch-Master4.png', 2019),
+(4, 'Rolex Deepsea 116660 Blue D-Blue', 'sea-dweller.png', 30000, 'Nordgreen', 'Omega Speedmaster', 200000, 'Nằm trong bộ sưu tập thợ lặn chuyên nghiệm Sea-Dweller được ra mắt vào năm 1967 khi mà bấy giờ những chiếc Submariner không đủ đáp ứng được những chuyến lặn sâu trong đoàn thám hiểm chuyên nghiệp. Những chiếc Sea-Dweller hiện nay dễ phân biệt được với Submariner nhờ bộ vỏ dày có kích thước lớn hơn cùng với van xả khí heli bên cạnh sườn.',  'Sea-Dweller1.png', 'Sea-Dweller2.png', 'Sea-Dweller3.png', 2022);
 
 -- --------------------------------------------------------
 
@@ -182,15 +186,6 @@ INSERT INTO `tbl_year` (`id`, `year`) VALUES
 --
 
 
-
-
---
--- Constraints for dumped tables
---
-
---
--- Constraints for table `products`
---
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

@@ -3,27 +3,13 @@
 
 <?php 
     $db = new Database();
-    $query = "SELECT name FROM tbl_brand";
-    $result = $db->select($query);
 
-    for($i = 0; $i < $result->num_rows; $i++) {
-        $brand[$i] = $result->fetch_assoc();
-    }
-
-    $query = "SELECT name FROM tbl_model";
-    $result = $db->select($query);
-
-    for($i = 0; $i < $result->num_rows; $i++) {
-        $model[$i] = $result->fetch_assoc();
-    }
-
-
-    $query = "SELECT year FROM tbl_year";
-    $result = $db->select($query);
-
-    for($i = 0; $i < $result->num_rows; $i++) {
-        $year[$i] = $result->fetch_assoc();
-    }
+    $brand = getData($db, "name", "tbl_brand");
+    $model = getData($db, "name", "tbl_model");
+    $year = getData($db, "year", "tbl_year");
+    $product = getData($db, "*", "tbl_products");
+    $min = 0;
+    $max = 100000;
 
     $checkYear = [];
     if(isset($_GET['year'])) {
@@ -38,6 +24,14 @@
     $checkModel =[];
     if(isset($_GET['model'])) {
         $checkModel = $_GET['model'];
+    }
+
+    if(isset($_GET['range-a'])) {
+        $min = $_GET['range-a'];
+    }
+
+    if(isset($_GET['range-b'])) {
+        $max = $_GET['range-b'];
     }
 ?>
 
@@ -158,8 +152,8 @@
                 <h3>Price</h3>
                 <div class="slider">
                     <div class="slider-track"></div>
-                    <input type="range" name="range-a" id="range-a" min="0" max="100000" value="0" oninput="slideA()">
-                    <input type="range" name="range-b" id="range-b" min="0" max="100000" value="100000" oninput="slideB()">
+                    <input type="range" name="range-a" id="range-a" min="0" max="100000" value="<?php echo $min ?>" oninput="slideA()">
+                    <input type="range" name="range-b" id="range-b" min="0" max="100000" value="<?php echo $max ?>" oninput="slideB()">
                 </div>
                 <div class="values">
                     <div>
@@ -180,61 +174,63 @@
     </form>
 
     <div class="product-list">
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
         
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
+        <?php 
+            if(empty($checkBrand) && empty($checkModel) && empty($checkYear) && $min == 0 && $max == 100000) {
+                for($i = 0; $i < count($product); $i++) {
+                    echo '<div class="item">
+                    <img src="../img/product/';
+                    echo $product[$i]['img'];
+                    echo '" class="watch-image">
+                    <p class="watch-name">';
+                    echo $product[$i]['prd_name'];
+                    echo '</p>
+                    <p class="watch-price">';
+                    echo $product[$i]['price'];
+                    echo '</p>
+                    </div>';
+                }
+            }
+            else {
 
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
+                $value = $product;
+                $value2 = [];
+                $a=0;
+                for($i = 0; $i < count($value); $i++) {
+                    
+                    if((in_array($value[$i]['brand'], $checkBrand) || in_array($value[$i]['model'], $checkModel) || in_array($value[$i]['year'], $checkYear)) && ($value[$i]['price'] >= $min && $value[$i]['price'] <= $max) ) {
+                        $value2[$a] = $value[$i];
+                        $a++;
+                    }
+                    elseif($value[$i]['price'] >= $min && $value[$i]['price'] <= $max) {
+                        $value2[$a] = $value[$i];
+                        $a++;
+                    }
+                }
 
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
+                if(empty($value2)) {
+                    echo "There is no item that match your search";
+                }
+                else {
+                    for($i = 0; $i < count($value2); $i++) {
+                        if(array_key_exists($i, $value2)) {
+                            echo '<div class="item">
+                            <img src="../img/product/';
+                            echo $value2[$i]['img'];
+                            echo '" class="watch-image">
+                            <p class="watch-name">';
+                            echo $value2[$i]['prd_name'];
+                            echo '</p>
+                            <p class="watch-price">';
+                            echo $value2[$i]['price'];
+                            echo '</p>
+                            </div>';
+                        }
+                    }
+                }
+            }
+        ?>
 
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/images/uhren/25669017-ndrgpu2odu6fy76vyk82eiih-Square360.jpg" class="watch-image">
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-attribute">Chrono Unitime 18k Rose Gold RB0510U0/A733</p>
-            <p class="watch-price">$5,547</p>
-        </div>
     </div>
 </div>
 

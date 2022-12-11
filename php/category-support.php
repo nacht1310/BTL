@@ -1,4 +1,15 @@
 <?php 
+    function getData($db, $name, $table) {
+        $query = "SELECT $name FROM $table";
+        $result = $db->select($query);
+
+        for($i = 0; $i < $result->num_rows; $i++) {
+            $value[$i] = $result->fetch_assoc();
+        }
+
+        return $value;
+    }
+
     function displayBrand($element, $check) {
         $n= floor(count($element)/3);
         echo '<div style="width:33%">';

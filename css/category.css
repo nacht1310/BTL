@@ -250,5 +250,17 @@ input[type="range"]::-ms-thumb {
     font-weight: 500;
 }
 
+@media (max-width: 1300px ) {
+    .product-list .item {
+        width: 32%;
+    }
+}
+
+@media (max-width: 700px) {
+    .product-list .item {
+        width: 50%;
+    }
+}
+
 
 

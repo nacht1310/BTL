@@ -27,6 +27,7 @@
     <link rel="stylesheet" href="../css/news.css">
     <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" href="../css/detail.css">
+    <link rel="stylesheet" href="../css/contact.css">
     <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 </head>
@@ -41,7 +42,7 @@
       
       <ul class="nav">
         <li class="nav-item">
-          <a class="navItem un" href="#">Home</a>
+          <a class="navItem un" href="../index.php">Home</a>
         </li>
         <li class="nav-item">
           <a class="navItem un" href="#about">About Us</a>
@@ -53,7 +54,7 @@
           <a class="navItem un" href="#news">News</a>
         </li>
         <li class="nav-item">
-          <a class="navItem un" href="#">Contact</a>
+          <a class="navItem un" href="./php/contact.php">Contact</a>
         </li>          
       </ul>     
       
