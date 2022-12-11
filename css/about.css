@@ -38,6 +38,17 @@
     margin-right: 4px;
     margin-left:4px;
 }
+@media (max-width:1000px) {
+    #about{
+        height: 80vh;
+    }
+    .content h2{
+        font-size: 25px;
+    }
+    .aboutContent{
+        bottom: 90px;
+    }
+ }
 @media (max-width:900px) {
     #about{
         height: 80vh;
