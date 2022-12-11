@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="./css/news.css">
     <link rel="stylesheet" href="./css/footer.css">
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
     
 </head>
@@ -23,7 +23,8 @@
     
     <!-- Header -->
     <header>
-      <span class="brand" data-aos="zoom-in" data-aos-duration="1000">Brand</span>
+      <nav class="nav_pc"></nav>
+      <a href="#" class="navItem" data-aos="zoom-in" data-aos-duration="1000"><img src="img/logobrand.png" alt="" class="logoBrand"> <span class="brand">MYWATCH</span> </a>
       
       
       <div class="menu">
@@ -41,28 +42,22 @@
           <li class="nav-item">
             <a class="navItem un" href="#about">About Us</a>
           </li>
-          <li class="nav-item dropdown">
-            <a class="navItem un dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false">Category</a>
-            
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Luxury watch</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-              
-            </ul>
+          <li class="nav-item">
+            <a class="navItem un">Product</a> 
           </li>
           <li class="nav-item">
             <a class="navItem un" href="#news">News</a>
           </li>
           <li class="nav-item">
             <a class="navItem un" href="#">Contact</a>
-          </li>
+          </li>          
         </ul>     
         
       </div>
-      <div class="search-btn"><i class="bi bi-search"></i></div>
+      
       <div id="logReg"><a href="#">Login/Register</a></div>
-  
+      
+      
     </header>
     
     
@@ -89,17 +84,17 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./img/carousel/rolex-daytona-ceramic-cufflink.png" class="d-block w-100" alt="...">
+          <img src="./img/carousel/rolex-daytona-ceramic-cufflink-1200x800.png" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h3>BUILT FOR MEN</h3>
-            <p>Some representative placeholder content for the second slide.</p>
+            <h3>Change the world.</h3>
+            <p>There are people who belive that the world moves forward on the back of inspiration and ideads. For them, a day is more than 24 hours. A day is an oppotunity to make something happen - to make a positive difference.</p>
           </div>
         </div>
         <div class="carousel-item">
           <img src="./img/carousel/Gemma_Blog_Featured_Image-10.webp" class="d-block w-100" alt="...">
           <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+            <h3>The Power of Precision</h3>
+            <p>With a triplock winding crown and a unidirectional rotable bezel, the Rolex Submariner is a timeless timepiece 1,000 feet above or below sea level.</p>
           </div>
         </div>
       </div>
@@ -263,10 +258,10 @@
             <div class="card text-center">
               <img class="card-img-top" src="img/News/News3.jpg" alt="Hinh tin tuc 2">
               <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-warning">13-12-2019</h6>
-                <h4 class="card-title text-uppercase">Cloud tech day - Giải mã bài toán</h4>
+                <h6 class="card-subtitle mb-2 text-warning">13-12-2022</h6>
+                <h4 class="card-title text-uppercase">Phát kiến mới trong công nghệ đồng hồ</h4>
                 <p class="card-text">
-                  Ông Vũ Minh Trí, CEO nhấn mạnh "Các doanh nghiệp cần hiểu rõ vấn đề của mình, từ..."</p>
+                  Ông Nguyễn Anh Khoa, CEO nhấn mạnh "Các doanh nghiệp cần hiểu rõ vấn đề của mình, từ..."</p>
               </div>
             </div>
           </div>
@@ -274,10 +269,10 @@
             <div class="card text-center">
               <img class="card-img-top" src="img/News/News1.jpg" alt="Hinh tin tuc 3">
               <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-warning">12-12-2019</h6>
+                <h6 class="card-subtitle mb-2 text-warning">12-12-2022</h6>
                 <h4 class="card-title text-uppercase">Ra mắt Bộ sưu tập Rolex Christmas.</h4>
                 <p class="card-text">
-                  Ra mắt bộ sản</p>
+                  Ra mắt bộ sản phẩm mới...</p>
               </div>
             </div>
           </div>
@@ -285,7 +280,7 @@
             <div class="card text-center">
               <img class="card-img-top" src="img/ro1.jpg" alt="Hinh tin tuc 4">
               <div class="card-body">
-                <h6 class="card-subtitle mb-2 text-warning">13-12-2019</h6>
+                <h6 class="card-subtitle mb-2 text-warning">13-12-2022</h6>
                 <h4 class="card-title text-uppercase">Tuyên bố thành nhà phát triển toàn cầu.</h4>
                 <p class="card-text">
                   Trở thành nhà phát triển toàn cầu, ngoài khu vực ASEAN còn hướng đến khu vực châu Mỹ...</p>
@@ -298,7 +293,8 @@
          <footer data-aos="fade-down">
           <div class="col-md-12 text-center footerContent">
             <div class="footer-site-logo mb-4">
-              <a href="#">Brand</a>
+              <img src="img/logobrand.png" alt="" class="logoBrand">
+              <a href="#" class="brandFooter">MYWATCH</a>
             </div>
             <ul class="list-unstyled mb-5 ">
               <li><a class="nav-link" href="#">Home</a></li>
@@ -320,7 +316,7 @@
           </div>
 
           <div class="copyright">
-            <p class="mb-0"><small>&copy; Brand. All Rights Reserved.</small></p>
+            <p class="mb-0"><small>&copy; MYWATCH. All Rights Reserved.</small></p>
           </div>
 
 
@@ -328,12 +324,6 @@
        </footer>
     </div> 
       
-     
-    
-
-      
-  
-      <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
       <script>
         AOS.init();
       </script>

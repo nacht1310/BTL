@@ -44,7 +44,7 @@
               <div class="card text-center">
                 <img class="card-img-top" src="../img/News/News1.jpg" alt="Hinh tin tuc 3">
                 <div class="card-body">
-                  <h6 class="card-subtitle mb-2 text-warning">12-12-2019</h6>
+                  <h6 class="card-subtitle mb-2 text-warning">12-12-2022</h6>
                   <h4 class="card-title text-uppercase">Ra mắt Bộ sưu tập Rolex Christmas.</h4>
                   <p class="card-text">
                     Ra mắt bộ sản</p>
