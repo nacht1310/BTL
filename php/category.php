@@ -176,36 +176,37 @@
     <div class="product-list">
         
         <?php 
-            if(empty($checkBrand) && empty($checkModel) && empty($checkYear) && $min == 0 && $max == 100000) {
+            if(empty($checkBrand) && empty($checkModel) && empty($checkYear)) {
                 for($i = 0; $i < count($product); $i++) {
-                    echo '<div class="item">
-                    <img src="../img/product/';
-                    echo $product[$i]['img'];
-                    echo '" class="watch-image">
-                    <p class="watch-name">';
-                    echo $product[$i]['prd_name'];
-                    echo '</p>
-                    <p class="watch-price">';
-                    echo $product[$i]['price'];
-                    echo '</p>
-                    </div>';
+                    if($product[$i]['price'] >= $min && $product[$i]['price'] <= $max) {
+                        echo '<div class="item">
+                        <img src="../img/product/';
+                        echo $product[$i]['img'];
+                        echo '" class="watch-image">
+                        <p class="watch-name">';
+                        echo $product[$i]['prd_name'];
+                        echo '</p>
+                        <p class="watch-price">';
+                        echo '$'.$product[$i]['price'];
+                        echo '</p>
+                        </div>';
+                    }
                 }
             }
             else {
 
-                $value = $product;
                 $value2 = [];
                 $a=0;
-                for($i = 0; $i < count($value); $i++) {
+                for($i = 0; $i < count($product); $i++) {
+                    if($product[$i]['price'] >= $min && $product[$i]['price'] <= $max) {
+                        $value[$i] = $product[$i];
+                        if(in_array($value[$i]['brand'], $checkBrand) || in_array($value[$i]['model'], $checkModel) || in_array($value[$i]['year'], $checkYear))  {
+                            $value2[$a] = $value[$i];
+                            $a++;
+                        }
+
+                    }
                     
-                    if((in_array($value[$i]['brand'], $checkBrand) || in_array($value[$i]['model'], $checkModel) || in_array($value[$i]['year'], $checkYear)) && ($value[$i]['price'] >= $min && $value[$i]['price'] <= $max) ) {
-                        $value2[$a] = $value[$i];
-                        $a++;
-                    }
-                    elseif($value[$i]['price'] >= $min && $value[$i]['price'] <= $max) {
-                        $value2[$a] = $value[$i];
-                        $a++;
-                    }
                 }
 
                 if(empty($value2)) {
@@ -222,7 +223,7 @@
                             echo $value2[$i]['prd_name'];
                             echo '</p>
                             <p class="watch-price">';
-                            echo $value2[$i]['price'];
+                            echo '$'.$value2[$i]['price'];
                             echo '</p>
                             </div>';
                         }
