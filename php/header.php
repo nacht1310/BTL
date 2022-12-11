@@ -34,7 +34,7 @@
 <div class="container-fluid">
     <header>
     <nav class="nav_pc"></nav>
-    <a href="#" class="navItem" data-aos="zoom-in" data-aos-duration="1000"><img src="img/logobrand.png" alt="" class="logoBrand"> <span class="brand">MYWATCH</span> </a>
+    <a href="#" class="navItem" data-aos="zoom-in" data-aos-duration="1000"><img src="../img/logobrand.png" alt="" class="logoBrand"> <span class="brand">MYWATCH</span> </a>
     
     
     <div class="menu">

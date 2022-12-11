@@ -5,7 +5,7 @@
     <footer data-aos="fade-down">
           <div class="col-md-12 text-center footerContent">
             <div class="footer-site-logo mb-4 d-flex flex-column align-items-center">
-              <img src="img/logobrand.png" alt="" class="logoBrand">
+              <img src="../img/logobrand.png" alt="" class="logoBrand">
               <a href="#" class="brandFooter">MYWATCH</a>
             </div>
             <ul class="list-unstyled mb-5 ">
