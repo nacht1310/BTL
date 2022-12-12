@@ -66,7 +66,7 @@
             <h2>About this watch: </h2>
             <p><?php echo $value['description']; ?></p>
             <ul>
-            <li> Model: <span>Gold Yellow</span></li>
+            <li> Model: <span><?php echo $value['model']; ?></span></li>
               <li>Available: <span>in stock</span></li>
               <li>Shipping Area: <span>All over the world</span></li>
               <li>Shipping Fee: <span>Free</span></li>
