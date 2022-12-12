@@ -1,5 +1,5 @@
-<?php include "./header.php" ?>
-<?php include "../lib/database.php" ?>
+<?php include "./php/header.php" ?>
+<?php include "./lib/database.php" ?>
 <?php
     
       $id = $_POST['product'];
@@ -56,7 +56,6 @@
         <!-- card right -->
         <div class = "product-content">
           <h2 class = "product-title"><?php echo $value['prd_name']; ?></h2>
-          <a href = "#" class = "product-link">visit Rolex store</a>
 
           <div class = "product-price">
            <p class = "last-price">Price: $ <?php echo $value['price']; ?></p>
@@ -88,4 +87,4 @@
     
 </div>
        
-<?php include "./footer.php" ?>
+<?php include "./php/footer.php" ?>

@@ -20,7 +20,15 @@
 
                 <li class="category menuitem">Category Option 
                     <ul class="submenu">
-                        <li class="submenu-item" id="category"> Add Category  </li>
+                        <li class="submenu-item" id="brand"> Add Brand  </li>
+                    </ul>
+
+                    <ul class="submenu">
+                        <li class="submenu-item" id="model"> Add Model  </li>
+                    </ul>
+                    
+                    <ul class="submenu">
+                        <li class="submenu-item" id="year"> Add Year  </li>
                     </ul>
                 </li>
 

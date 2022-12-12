@@ -52,8 +52,8 @@ form input[type = 'file'] {
 }
 
 form .button {
-    width: 100px;
-    height: 35px;
+    width: 200px;
+    height: 45px;
     border-radius: 10px;
     border: none;
     color: white;

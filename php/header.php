@@ -25,6 +25,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/product.css">
+    <link rel="stylesheet" href="../css/about.css">
     <link rel="stylesheet" href="../css/news.css">
     <link rel="stylesheet" href="../css/category.css">
     <link rel="stylesheet" href="../css/detail.css">
@@ -50,13 +51,13 @@
           <a class="navItem un" href="#about">About Us</a>
         </li>
         <li class="nav-item">
-          <a class="navItem un" href="../php/category.php">Product</a> 
+          <a class="navItem un" href="../category.php">Product</a> 
         </li>
         <li class="nav-item">
           <a class="navItem un" href="#news">News</a>
         </li>
         <li class="nav-item">
-          <a class="navItem un" href="../php/contact.php">Contact</a>
+          <a class="navItem un" href="../contact.php">Contact</a>
         </li>          
       </ul>     
       

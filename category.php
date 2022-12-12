@@ -1,5 +1,5 @@
-<?php include "../lib/database.php" ?>
-<?php include "./category-support.php" ?>
+<?php include "./lib/database.php" ?>
+<?php include "./php/category-support.php" ?>
 
 <?php 
     $db = new Database();
@@ -37,54 +37,36 @@
 ?>
 
 
-<?php include "./header.php" ?>
+<?php include "./php/header.php" ?>
 
 <div class="container">
     <h3>Our most popular models</h3>
 
-    <div class="owl-carousel owl-theme">
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
+    <form class="owl-carousel owl-theme" action="detail.php" method="POST">
+        <?php 
+            $value = $product; 
+            for($i = 0; $i < count($value); $i++) {
+                if($value[$i]['sold'] > 10000) {
+                    echo '<div class="item">
+                    <img src="../img/product/';
+                    echo $value[$i]['img'].'" class="watch-image">
+                    <p class="watch-brand">';
+                    echo $value[$i]['brand'].'</p>
+                    <p class="watch-name">';
+                    echo $value[$i]['prd_name'].'</p>
+                    <p class="watch-price">from $';
+                    echo $value[$i]['price'];
+                    echo '</p>
+                    <button class="btn" type="submit" name="product" value="';
+                    echo $product[$i]['prd_id'];
+                    echo '">Check Product</button>
+                    </div>';
+                }
+            }
         
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
-
-        <div class="item">
-            <img src="https://cdn2.chrono24.com/cdn-cgi/image/f=auto,metadata=none,q=65,h=305/images/topmodels/58-23ylh0e75ur1pxmih48bd3x0-Original.png" class="watch-image">
-            <p class="watch-brand">Rolex</p>
-            <p class="watch-name">Yacht-Master</p>
-            <p class="watch-price">from $5,547</p>
-        </div>
-    </div>
+        ?>
+        
+        </form>
 
     <div class="filter">
         <h4 style="margin-right: 20px;">Filter: </h4>
@@ -242,4 +224,4 @@
         </form>
 </div>
 
-<?php include "./footer.php" ?>
+<?php include "./php/footer.php" ?>

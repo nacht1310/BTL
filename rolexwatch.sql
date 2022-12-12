@@ -23,7 +23,7 @@ SET time_zone = "+00:00";
 
 -- --------------------------------------------------------
 
-DROP TABLE IF EXISTS tbl_admin, tbl_brand, tbl_model, tbl_products, tbl_user, tbl_year, tbl_customer;
+DROP TABLE IF EXISTS tbl_admin, tbl_brand, tbl_model, tbl_products, tbl_user, tbl_year, tbl_customer, tbl_page_info;
 
 --
 -- Table structure for table `products`
@@ -201,7 +201,22 @@ CREATE TABLE `tbl_customer` (
   `cus_messages` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+-- --------------------------------------------------------
 
+--
+-- Table structure for table `tbl_page_info`
+--
+
+CREATE TABLE `tbl_page_info` (
+  `id` int(100) NOT NULL,
+  `about` varchar(1000) NOT NULL,
+  `address` varchar(255) NOT NULL,
+  `phone` varchar(30) NOT NULL,
+  `email` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `tbl_page_info` (`id`,`about`, `address`, `phone`, `email`) VALUES
+(1, 'A Trusted Seller is distinguished by special reliability and trustworthiness in his dealings with Chrono24 and its users. To become a Chrono24 Trusted Seller, a dealer must meet a few important requirements, which we have listed for you below. He/she must also acknowledge and sign the Trusted Seller Guidelines for dealers.', 'Ho Chi Minh City', '(111) 111-1111', 'laptrinhweb@gmail.com');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

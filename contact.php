@@ -1,5 +1,5 @@
-<?php include "./header.php" ?>
-<?php include "../lib/database.php" ?>
+<?php include "./php/header.php" ?>
+<?php include "./lib/database.php" ?>
 
 <?php 
   $db = new Database();
@@ -18,6 +18,10 @@
       echo '<script>swal("We fail to receive your information. Please try again!");</script>';
     }
   }
+
+  $query = "SELECT * from tbl_page_info";
+    $result = $db->select($query);
+    $value = $result->fetch_assoc();
 ?>
    
     <div class="bannerContact">
@@ -68,11 +72,11 @@
       <div class="direct-contact-container">
 
         <ul class="contact-list">
-          <li class="list-item"><i class="bi bi-pin-map-fill size"><span class="contact-text place">Ho Chi Minh City</span></i></li>
+          <li class="list-item"><i class="bi bi-pin-map-fill size"><span class="contact-text place"> <?php echo $value['address']; ?></span></i></li>
           
-          <li class="list-item"><i class="bi bi-telephone"><span class="contact-text phone">(111) 111-1111</span></i></li>
+          <li class="list-item"><i class="bi bi-telephone"><span class="contact-text phone"><?php echo $value['phone']; ?></span></i></li>
           
-          <li class="list-item"><i class="bi bi-envelope-fill"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email">laptrinhweb@gmail.com</a></span></i></li>
+          <li class="list-item"><i class="bi bi-envelope-fill"><span class="contact-text gmail"><a href="mailto:#" title="Send me an email"><?php echo $value['email']; ?></a></span></i></li>
           
         </ul>
 
@@ -102,4 +106,4 @@
 </section>  
     
    
-<?php include "./footer.php" ?>
+<?php include "./php/footer.php" ?>

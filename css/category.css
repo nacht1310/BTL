@@ -10,8 +10,11 @@
     width: 100%;
     position: relative;
     background-color: #f3f5f9;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 10px 20px;
     border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+    height: 480px;
 }
 
 .item .watch-image {
@@ -24,6 +27,13 @@
 
 .item .watch-name {
     font-weight: 500;
+}
+
+.item .btn {
+    background-color: #d9b402;
+    color: white;
+    font-weight: 500;
+    width: 100%;
 }
 
 /* ---------- ----------*/
@@ -237,6 +247,7 @@ input[type="range"]::-ms-thumb {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 20px;
 }
 
 .product-list .item .watch-image {

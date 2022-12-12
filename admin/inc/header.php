@@ -20,6 +20,7 @@
     <link rel="stylesheet" href="./css/footer.css">
 
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 
     <script src="../../node_modules/jquery/dist/jquery.min.js"></script>
     <script src="../../vendor/bootstrap.bundle.min.js"></script>

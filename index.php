@@ -1,3 +1,5 @@
+<?php include "./lib/database.php" ?>
+
 <?php include "./php/header.php" ?>
     
 <?php include "./php/banner.php" ?>

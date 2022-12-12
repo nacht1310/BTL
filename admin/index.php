@@ -2,6 +2,8 @@
 <?php include 'inc/sidebar.php';?>
 <?php include "../helper/format.php" ?>
 <?php include 'changepass.php' ?>
+<?php include 'changeCategory.php' ?>
+<?php include 'changePageInfo.php' ?>
 
     <div class="container">
         <h4>Site Option</h4>
@@ -57,19 +59,19 @@
             <div class="category" id="about-us-pos">
                 <h5>About Us </h5>
                 
-                <form>
+                <form action="index.php" method="POST">
                     <label>Update About Us: </label><br>
                     <textarea name="about" class="medium" >
                     </textarea><br>
                                         
-                    <input type="submit" name="submit" Value="Update" class="button">
+                    <input type="submit" name="submit" Value="Update Page" class="button">
                 </form>
             </div>
 
             <div class="category" id="contact-us-pos">
                 <h5>Contact Us </h5>
                 
-                <form>
+                <form action="index.php" method="POST">
                     <label>Phone Number: </label><br>
                     <input type="text" placeholder="Enter new phone number"  name="phone" class="medium" ><br>
 
@@ -79,21 +81,43 @@
                     <label>E-mail: </label><br>
                     <input type="text" placeholder="Enter new e-mail"  name="email" class="medium" ><br>
                                         
-                    <input type="submit" name="submit" Value="Update" class="button">
+                    <input type="submit" name="submit" Value="Update Page" class="button">
                 </form>
             </div>
         </div>
 
         <h4>Category Option</h4>
         <div class="section">
-            <div class="category" id="category-pos">
-                <h5>Add Category</h5>
+            <div class="category" id="brand-pos">
+                <h5>Add Brand</h5>
               
-                <form>
-                    <label>Category Name: </label><br>
-                    <input type="text" placeholder="Enter category name"  name="category-name" class="medium" ><br>
+                <form action="index.php" method="POST">
+                    <label>Brand Name: </label><br>
+                    <input type="text" placeholder="Enter brand name"  name="brand-name" class="medium" ><br>
                                        
-                    <input type="submit" name="submit" Value="Update" class="button">
+                    <input type="submit" name="submit" value="Add Category" class="button">
+                </form>
+            </div>
+
+            <div class="category" id="model-pos">
+                <h5>Add Model</h5>
+              
+                <form action="index.php" method="POST">
+                    <label>Model Name: </label><br>
+                    <input type="text" placeholder="Enter model name"  name="model-name" class="medium" ><br>
+                                       
+                    <input type="submit" name="submit" value="Add Category" class="button">
+                </form>
+            </div>
+
+            <div class="category" id="year-pos">
+                <h5>Add Year</h5>
+              
+                <form action="index.php" method="POST">
+                    <label>Year Name: </label><br>
+                    <input type="text" placeholder="Enter year"  name="year-name" class="medium" ><br>
+                                       
+                    <input type="submit" name="submit" value="Add Category" class="button">
                 </form>
             </div>
         </div>
@@ -106,10 +130,10 @@
                 <form>
                     <label>Product Name: </label><br>
                     <input type="text" placeholder="Enter product name"  name="product-name" class="medium" ><br>
-
-                    <label>Category: </label><br>
-                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="category-dropdown">
-                        Category
+                    
+                    <label>Brand: </label><br>
+                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="brand-dropdown">
+                        Brand
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -117,9 +141,19 @@
                         <li><a class="dropdown-item" href="#">Option 3</a></li>
                     </ul><br>
 
-                    <label>Brand: </label><br>
-                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="brand-dropdown">
-                        Brand
+                    <label>Model: </label><br>
+                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="category-dropdown">
+                        Model
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">Option 1</a></li>
+                        <li><a class="dropdown-item" href="#">Option 2</a></li>
+                        <li><a class="dropdown-item" href="#">Option 3</a></li>
+                    </ul><br>
+
+                    <label>Year: </label><br>
+                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="type-dropdown">
+                        Year
                     </button>
                     <ul class="dropdown-menu">
                         <li><a class="dropdown-item" href="#">Option 1</a></li>
@@ -134,15 +168,8 @@
                     <label>Product Image: </label><br>
                     <input type="file" name="slider-image" class="medium" ><br>
 
-                    <label>Type: </label><br>
-                    <button class="btn btn-warning button-drop dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="type-dropdown">
-                        Type
-                    </button>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="#">Option 1</a></li>
-                        <li><a class="dropdown-item" href="#">Option 2</a></li>
-                        <li><a class="dropdown-item" href="#">Option 3</a></li>
-                    </ul><br>
+                    <label>Price: </label><br>
+                    <input type="number" name="price" class="medium" ><br>
                                        
                     <input type="submit" name="submit" Value="Update" class="button">
                 </form>
@@ -177,12 +204,26 @@
 <?php 
 
     $fm = new Format();
-    if($_SERVER["REQUEST_METHOD"] == "POST") {
+    if(isset($_POST['submit']) && $_POST['submit'] == 'Change') {
 
         $pass_old = $fm->validation($_POST["pass_old"]);
         $pass_new = $fm->validation($_POST["pass_new"]);
         $pass_confirm = $fm->validation($_POST["pass_confirm"]);
         changepass($pass_old, $pass_new, $pass_confirm);
     }
+    
+    if(isset($_POST['submit']) && $_POST['submit'] == 'Add Category') {
+        $brand = $_POST["brand-name"] ?? '';
+        $model = $_POST["model-name"] ?? '';
+        $year = $_POST["year-name"] ?? '';
+        changeCategory($brand, $model, $year);
+    }
 
+    if(isset($_POST['submit']) && $_POST['submit'] == 'Update Page') {
+        $about = $_POST["about"] ?? '';
+        $address = $_POST["address"] ?? '';
+        $phone = $_POST["phone"] ?? '';
+        $email = $_POST["email"] ?? '';
+        changePageInfo($about, $address, $phone, $email);
+    }
 ?>
